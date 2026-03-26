@@ -1,5 +1,9 @@
 {
+  "builds": [
+    { "src": "review_chunk.js", "use": "@vercel/node" }
+  ],
   "routes": [
+    { "src": "/api/review_chunk", "dest": "/review_chunk.js" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
