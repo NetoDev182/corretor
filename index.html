@@ -46,7 +46,7 @@
                 <div class="flex justify-between items-center text-sm font-medium text-gray-700">
                     <div class="flex items-center space-x-2">
                         <svg class="animate-spin h-4 w-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                        <span id="progressText">Extraindo texto com PyMuPDF...</span>
+                        <span id="progressText">Aguarde, processando...</span>
                     </div>
                     <span id="progressPercent" class="text-indigo-600 font-bold">0%</span>
                 </div>
@@ -105,12 +105,12 @@
             ui.progressBar.classList.remove('bg-red-500');
             ui.progressBar.classList.add('bg-indigo-600');
             
-            ui.progressText.innerText = 'Passo 1: Lendo PDF pelo servidor Python (PyMuPDF)...';
+            ui.progressText.innerText = 'Passo 1: Extraindo texto do PDF no servidor (Node.js)...';
             ui.progressBar.style.width = '10%';
             ui.progressPct.innerText = '10%';
 
             try {
-                // 1. Extração no Python (Vercel Serverless Function 1)
+                // 1. Extração via Node.js (Vercel Serverless Function)
                 const formData = new FormData();
                 formData.append('pdf', ui.file.files[0]);
 
